@@ -302,3 +302,164 @@
 .form button:focus {
   background-color: #6c8cff;
 }
+
+/* ============ hw-03 image search ============ */
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #2e2f42;
+  background-color: #fafafb;
+}
+
+main {
+  padding: 32px 24px 48px;
+}
+
+/* Override .form for the search bar (horizontal layout) */
+body > main > .form {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: auto;
+  max-width: 600px;
+  margin: 0 auto 32px;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body > main > .form label {
+  flex: 1;
+}
+
+body > main > .form input[type='text'] {
+  width: 100%;
+  height: 48px;
+  padding: 10px 20px;
+  font: inherit;
+  font-size: 16px;
+  color: #2e2f42;
+  background-color: #ffffff;
+  border: 1px solid #808080;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.25s ease;
+}
+
+body > main > .form input[type='text']::placeholder {
+  color: #2e2f42;
+  opacity: 1;
+}
+
+body > main > .form input[type='text']:focus {
+  border-color: #4e75ff;
+}
+
+body > main > .form button {
+  align-self: auto;
+  height: 48px;
+  min-width: 90px;
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+/* Override gallery for the new card structure */
+body > main > .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+body > main > .gallery .gallery-item {
+  width: auto;
+  height: auto;
+  overflow: visible;
+  background-color: #ffffff;
+  border: 1px solid rgba(46, 47, 66, 0.1);
+  border-radius: 4px;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+body > main > .gallery .gallery-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(46, 47, 66, 0.12);
+  z-index: auto;
+}
+
+body > main > .gallery .gallery-link {
+  display: block;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+body > main > .gallery .gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: zoom-in;
+}
+
+.gallery-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  list-style: none;
+  margin: 0;
+  padding: 12px 8px;
+  font-size: 12px;
+  text-align: center;
+  border-top: 1px solid rgba(46, 47, 66, 0.1);
+}
+
+.gallery-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.gallery-info-label {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.gallery-info-value {
+  color: #2e2f42;
+}
+
+/* Loader (vineethtrv/css-loader inspired) */
+.loader {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 24px auto;
+  border: 5px solid #4e75ff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.loader.is-hidden {
+  display: none;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
