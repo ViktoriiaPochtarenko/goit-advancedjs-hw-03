@@ -220,89 +220,6 @@
   color: #2e2f42;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  width: 360px;
-  margin: 24px auto;
-  padding: 24px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #2e2f42;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(46, 47, 66, 0.1);
-}
-
-.form > label {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-weight: 500;
-}
-
-.form input[type='number'] {
-  padding: 8px 12px;
-  font: inherit;
-  color: inherit;
-  background-color: #ffffff;
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  border-radius: 4px;
-  outline: none;
-  transition: border-color 0.25s ease;
-}
-
-.form input[type='number']:focus {
-  border-color: #4e75ff;
-}
-
-.form fieldset {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 12px 16px;
-  border: 1px solid rgba(46, 47, 66, 0.2);
-  border-radius: 4px;
-}
-
-.form legend {
-  padding: 0 4px;
-  font-weight: 500;
-}
-
-.form fieldset label {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 400;
-  cursor: pointer;
-}
-
-.form input[type='radio'] {
-  accent-color: #4e75ff;
-  cursor: pointer;
-}
-
-.form button {
-  align-self: flex-start;
-  padding: 8px 16px;
-  font: inherit;
-  font-weight: 500;
-  color: #ffffff;
-  background-color: #4e75ff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.25s ease;
-}
-
-.form button:hover,
-.form button:focus {
-  background-color: #6c8cff;
-}
-
 /* ============ hw-03 image search ============ */
 
 body {
@@ -316,29 +233,34 @@ main {
   padding: 32px 24px 48px;
 }
 
-/* Override .form for the search bar (horizontal layout) */
-body > main > .form {
+.form {
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 16px;
-  width: auto;
+  width: 100%;
   max-width: 600px;
   margin: 0 auto 32px;
   padding: 0;
   background: transparent;
   box-shadow: none;
+  border: none;
+  border-radius: 0;
 }
 
-body > main > .form label {
+.form label {
   flex: 1;
+  display: block;
 }
 
-body > main > .form input[type='text'] {
+.form input[type='text'] {
+  display: block;
+  box-sizing: border-box;
   width: 100%;
   height: 48px;
   padding: 10px 20px;
-  font: inherit;
+  font-family: inherit;
   font-size: 16px;
   color: #2e2f42;
   background-color: #ffffff;
@@ -348,23 +270,34 @@ body > main > .form input[type='text'] {
   transition: border-color 0.25s ease;
 }
 
-body > main > .form input[type='text']::placeholder {
+.form input[type='text']::placeholder {
   color: #2e2f42;
   opacity: 1;
 }
 
-body > main > .form input[type='text']:focus {
+.form input[type='text']:focus {
   border-color: #4e75ff;
 }
 
-body > main > .form button {
-  align-self: auto;
+.form button {
+  flex-shrink: 0;
   height: 48px;
   min-width: 90px;
   padding: 10px 24px;
+  font-family: inherit;
   font-size: 16px;
   font-weight: 500;
+  color: #ffffff;
+  background-color: #4e75ff;
+  border: none;
   border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.form button:hover,
+.form button:focus {
+  background-color: #6c8cff;
 }
 
 /* Override gallery for the new card structure */
